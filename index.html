@@ -286,6 +286,16 @@
   .cert-name { font-size: 0.82rem; color: var(--text); line-height: 1.4; font-weight: 500; margin-bottom: 0.5rem; }
   .cert-date { font-size: 0.65rem; color: var(--text-dim); }
 
+  /*Added these two functions to avoid the default underlines under the certicate texts*/
+  .cert-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  }
+  .cert-card:hover {
+  border-color: var(--pink);
+  transform: translateY(-3px);
+  } 
   /* CONTACT */
   #contact { background: var(--surface); border-top: 1px solid var(--border); text-align: center; }
   .contact-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
@@ -526,27 +536,32 @@
       <div class="section-line"></div>
     </div>
     <div class="certs-grid reveal">
-      <div class="cert-card">
-        <div class="cert-issuer">CSE Pathshala</div>
-        <div class="cert-name">C++ Programming: OOPs and DSA</div>
-        <div class="cert-date">Aug 2025</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Coursera</div>
-        <div class="cert-name">Fundamentals of Network Communication</div>
-        <div class="cert-date">Sep 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Coursera</div>
-        <div class="cert-name">Introduction to Hardware and Operating Systems</div>
-        <div class="cert-date">Sep 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">CSE Pathshala</div>
-        <div class="cert-name">Unrevealing Basic Python towards ML/AI</div>
-        <div class="cert-date">Mar 2024</div>
-      </div>
-    </div>
+
+  <a href="certificates/cpp-dsa.pdf" target="_blank" class="cert-card">
+    <div class="cert-issuer">CSE Pathshala</div>
+    <div class="cert-name">C++ Programming: OOPs and DSA</div>
+    <div class="cert-date">Aug 2025</div>
+  </a>
+
+  <a href="certificates/networking.pdf" target="_blank" class="cert-card">
+    <div class="cert-issuer">Coursera</div>
+    <div class="cert-name">Fundamentals of Network Communication</div>
+    <div class="cert-date">Sep 2024</div>
+  </a>
+
+  <a href="certificates/os.pdf" target="_blank" class="cert-card">
+    <div class="cert-issuer">Coursera</div>
+    <div class="cert-name">Introduction to Hardware and Operating Systems</div>
+    <div class="cert-date">Sep 2024</div>
+  </a>
+
+  <a href="certificates/python.jpg" target="_blank" class="cert-card">
+    <div class="cert-issuer">CSE Pathshala</div>
+    <div class="cert-name">Unrevealing Basic Python towards ML/AI</div>
+    <div class="cert-date">Mar 2024</div>
+  </a>
+  
+</div>
   </div>
 </section>
 
