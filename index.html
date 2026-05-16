@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Raj Vaibhav — Systems Engineer</title>
+<title>Raj Vaibhav - Systems Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -235,7 +235,7 @@
   .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(255,45,120,0.1); border-color: var(--pink-mid); }
   .project-header { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
   .project-type { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.4rem; }
-  .project-name { font-family: var(--sans); font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+  .project-name { font-family: var(--sans); font-size: 1.35rem; font-weight: 775; color: #fff; letter-spacing: 0.005em; }
   .project-date { font-size: 0.65rem; color: var(--text-dim); white-space: nowrap; border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 2px; }
   .project-body { padding: 1.5rem; }
   .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
@@ -243,6 +243,16 @@
   .project-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--pink); }
   .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .stack-tag { font-size: 0.68rem; padding: 0.2rem 0.5rem; background: var(--pink-dim); border: 1px solid var(--pink-mid); color: var(--pink); border-radius: 2px; letter-spacing: 0.05em; }
+  .project-github {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.2rem; padding: 0.5rem 0.9rem;
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--text-mid); text-decoration: none;
+    border: 1px solid var(--border-bright); border-radius: 3px;
+    background: var(--bg); transition: all 0.2s;
+  }
+  .project-github:hover { color: var(--pink); border-color: var(--pink); box-shadow: 0 0 18px var(--pink-dim); }
+  .project-github::before { content: '⌥'; color: var(--pink); font-size: 0.85rem; }
   .project-metric {
     display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem;
     color: var(--rose); background: var(--rose-dim);
@@ -272,32 +282,8 @@
   .tl-bullets li { font-size: 0.78rem; color: var(--text-mid); padding-left: 1.2rem; position: relative; line-height: 1.6; }
   .tl-bullets li::before { content: '//'; position: absolute; left: 0; color: var(--text-dim); font-size: 0.65rem; }
 
-  /* CERTS */
-  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-  .cert-card { border: 1px solid var(--border); padding: 1.2rem; border-radius: 4px; background: var(--surface); transition: all 0.2s; position: relative; overflow: hidden; }
-  .cert-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, var(--pink), var(--purple));
-    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-  }
-  .cert-card:hover::before { transform: scaleX(1); }
-  .cert-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
-  .cert-issuer { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.4rem; }
-  .cert-name { font-size: 0.82rem; color: var(--text); line-height: 1.4; font-weight: 500; margin-bottom: 0.5rem; }
-  .cert-date { font-size: 0.65rem; color: var(--text-dim); }
-
-  /*Added these two functions to avoid the default underlines under the certicate texts*/
-  .cert-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  }
-  .cert-card:hover {
-  border-color: var(--pink);
-  transform: translateY(-3px);
-  } 
   /* CONTACT */
-  #contact { background: var(--surface); border-top: 1px solid var(--border); text-align: center; }
+  #contact { text-align: center; }
   .contact-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
   .contact-item {
     display: flex; align-items: center; gap: 0.7rem;
@@ -348,7 +334,7 @@
       <h1 class="hero-name">Raj<br><span class="accent">Vaibhav</span></h1>
       <p class="hero-sub">
         Systems Programmer &amp; <strong>C++ Enthusiast</strong><br>
-        POSIX · Memory Management · OS · Networking
+        Backend · Memory Management · OS · Networking
       </p>
 
       <div class="hero-terminal">
@@ -358,8 +344,8 @@
         <div class="terminal-line"><span class="prompt">raj@arch</span>:~$ <span class="cmd">./whoami --verbose</span></div>
         <div class="terminal-line"><span class="out">name</span>      = <span class="val">"Raj Vaibhav"</span></div>
         <div class="terminal-line"><span class="out">role</span>      = <span class="val">"Systems Engineer (Aspiring)"</span></div>
-        <div class="terminal-line"><span class="out">primary</span>   = <span class="val">C++, POSIX, Linux</span></div>
-        <div class="terminal-line"><span class="out">interests</span> = <span class="val">[ mem_mgmt, OS, networking, DSA ]</span></div>
+        <div class="terminal-line"><span class="out">primary</span>   = <span class="val">C++, Linux, Backend</span></div>
+        <div class="terminal-line"><span class="out">interests</span> = <span class="val">[ POSIX, OS, Networking, DSA ]</span></div>
         <div class="terminal-line"><span class="out">status</span>    = <span class="val">"building things from scratch"</span></div>
         <div class="terminal-line"><span class="prompt">raj@arch</span>:~$ <span class="cursor-blink"></span></div>
       </div>
@@ -393,7 +379,7 @@
       <div class="skill-group sys">
         <div class="skill-group-title">Systems &amp; Low-Level</div>
         <div class="skill-tags">
-          <span class="tag">C++</span><span class="tag">C</span><span class="tag">POSIX Sockets</span>
+          <span class="tag">C++</span><span class="tag">POSIX Sockets</span>
           <span class="tag">Multithreading</span><span class="tag">Linux</span>
           <span class="tag">Memory Management</span><span class="tag">Bit Manipulation</span>
         </div>
@@ -401,15 +387,15 @@
       <div class="skill-group web">
         <div class="skill-group-title">Backend &amp; Web</div>
         <div class="skill-tags">
-          <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span>
-          <span class="tag">HTTP/TCP</span><span class="tag">JSON</span><span class="tag">JavaScript</span>
+          <span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
+          <span class="tag">PostgreSQL</span><span class="tag">REST APIs</span><span class="tag">HTTP/TCP</span>
+          <span class="tag">JSON</span>
         </div>
       </div>
       <div class="skill-group tools">
         <div class="skill-group-title">Tooling &amp; Misc</div>
         <div class="skill-tags">
-          <span class="tag">Git</span><span class="tag">Python</span><span class="tag">Java</span>
-          <span class="tag">DSA</span><span class="tag">STL</span><span class="tag">GDB</span>
+          <span class="tag">Git</span><span class="tag">GDB</span><span class="tag">STL</span>
         </div>
       </div>
     </div>
@@ -427,6 +413,29 @@
       <div class="project-card reveal">
         <div class="project-header">
           <div class="project-meta">
+            <div class="project-type">JavaScript · Chrome Extension · DOM</div>
+            <div class="project-name">Pac-Man Delete</div>
+          </div>
+          <div class="project-date">May 2026</div>
+        </div>
+        <div class="project-body">
+          <div class="project-metric">⚡ 200ms sync · 20-deletion queue cap</div>
+          <ul class="project-bullets">
+            <li>Built a <strong>Chrome browser extension</strong> that adds a fun animation: when you hold backspace to delete text, a small Pac-Man character appears and eats the letters one by one on any website you visit.</li>
+            <li>Solved a tricky cursor-positioning problem where the Pac-Man would get stuck in the wrong spot on modern sites like Google's Gemini, by writing <strong>custom logic</strong> to correctly figure out where the typing cursor actually is on screen.</li>
+            <li>Made the extension work smoothly even when users hold the backspace key down, by syncing each <strong>200ms Pac-Man animation</strong> with the text deletion and capping the queue at <strong>20 pending deletes</strong>, so the animation never falls behind or skips characters no matter how fast the user types.</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">JavaScript</span><span class="stack-tag">CSS</span>
+            <span class="stack-tag">Chrome Extension</span><span class="stack-tag">DOM</span>
+          </div>
+          <a href="https://github.com/Raj-Vaibhav-21/pacman_delete" target="_blank" rel="noopener noreferrer" class="project-github">View source on GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-meta">
             <div class="project-type">C++ · Algorithms · CLI</div>
             <div class="project-name">File Compression Tool</div>
           </div>
@@ -435,15 +444,16 @@
         <div class="project-body">
           <div class="project-metric">⚡ ~67% reduction on repetitive data</div>
           <ul class="project-bullets">
-            <li>Engineered a binary-safe lossless file compression tool using <strong>Huffman Coding</strong>, supporting arbitrary file types (text, PDF, binary) via a custom CLI.</li>
-            <li>Designed a custom compressed file format with metadata headers for deterministic tree reconstruction, implementing bit-level encoding/decoding with <strong>manual bit packing</strong>.</li>
-            <li>Benchmarked on real-world datasets up to 100MB+, achieving ~67% reduction on repetitive data and ~39% on natural language text with exact byte-level restoration.</li>
+           <li>Engineered a binary-safe <strong>lossless</strong> file compression tool in C++ using <strong>Huffman Coding</strong>, supporting compression and decompression of arbitrary file types (text, PDF, binary) via a custom <strong>CLI</strong>.</li>
+            <li>Designed a <strong>custom compressed file format</strong> with metadata headers for deterministic tree reconstruction, implementing bit-level encoding/decoding using STL, priority queues, and manual bit packing.</li>
+            <li>Benchmarked compression performance on real-world datasets (up to <strong>100MB+ files</strong>), achieving <strong>~67%</strong> reduction on repetitive data and <strong>~39%</strong> on natural language text while ensuring exact <strong>byte-level restoration</strong>.</li>
           </ul>
           <div class="project-stack">
             <span class="stack-tag">C++</span><span class="stack-tag">STL</span>
             <span class="stack-tag">Priority Queue</span><span class="stack-tag">Bit Encoding</span>
             <span class="stack-tag">Huffman Tree</span><span class="stack-tag">CLI</span>
           </div>
+          <a href="https://github.com/Raj-Vaibhav-21/File-Compression-Tool" target="_blank" rel="noopener noreferrer" class="project-github">View source on GitHub</a>
         </div>
       </div>
 
@@ -458,15 +468,16 @@
         <div class="project-body">
           <div class="project-metric">⚡ ~10,000+ req/sec locally (ApacheBench)</div>
           <ul class="project-bullets">
-            <li>Built a multithreaded HTTP server from scratch using <strong>POSIX TCP sockets</strong>, implementing the full HTTP request/response lifecycle and OS-level concurrency.</li>
-            <li>Designed a custom <strong>thread pool</strong> using <code>std::thread</code>, mutex, and <code>condition_variable</code> to handle concurrent connections efficiently with dynamic routing and static file serving.</li>
-            <li>Benchmarked using ApacheBench and analyzed latency, concurrency scaling, and CPU utilization under load to evaluate real-world performance characteristics.</li>
+            <li>Built a <strong>multithreaded HTTP server</strong> in C++ from scratch using <strong>POSIX TCP sockets</strong>, implementing the HTTP request/response lifecycle and <strong>OS-level concurrency</strong>.</li>
+            <li>Designed and implemented a custom <strong>thread pool</strong> (using std::thread, mutex, and condition_variable) to handle <strong>concurrent client connections</strong> efficiently, supporting dynamic routing and static file serving.</li>
+            <li>Benchmarked the server using <strong>ApacheBench</strong> (~10k+ req/sec locally) and analyzed latency, <strong>concurrency scaling</strong>, and CPU utilization to evaluate performance under load.</li>
           </ul>
           <div class="project-stack">
             <span class="stack-tag">C++</span><span class="stack-tag">POSIX Sockets</span>
             <span class="stack-tag">Thread Pool</span><span class="stack-tag">std::mutex</span>
             <span class="stack-tag">HTTP/1.1</span><span class="stack-tag">TCP/IP</span>
           </div>
+          <a href="https://github.com/Raj-Vaibhav-21/Mini-HTTP-Server" target="_blank" rel="noopener noreferrer" class="project-github">View source on GitHub</a>
         </div>
       </div>
     </div>
@@ -528,47 +539,10 @@
   </div>
 </section>
 
-<section id="certs">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-num">04 /</span>
-      <h2 class="section-title">Certificates</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="certs-grid reveal">
-
-  <a href="certificates/cpp-dsa.pdf" target="_blank" class="cert-card">
-    <div class="cert-issuer">CSE Pathshala</div>
-    <div class="cert-name">C++ Programming: OOPs and DSA</div>
-    <div class="cert-date">Aug 2025</div>
-  </a>
-
-  <a href="certificates/networking.pdf" target="_blank" class="cert-card">
-    <div class="cert-issuer">Coursera</div>
-    <div class="cert-name">Fundamentals of Network Communication</div>
-    <div class="cert-date">Sep 2024</div>
-  </a>
-
-  <a href="certificates/os.pdf" target="_blank" class="cert-card">
-    <div class="cert-issuer">Coursera</div>
-    <div class="cert-name">Introduction to Hardware and Operating Systems</div>
-    <div class="cert-date">Sep 2024</div>
-  </a>
-
-  <a href="certificates/python.jpg" target="_blank" class="cert-card">
-    <div class="cert-issuer">CSE Pathshala</div>
-    <div class="cert-name">Unrevealing Basic Python towards ML/AI</div>
-    <div class="cert-date">Mar 2024</div>
-  </a>
-  
-</div>
-  </div>
-</section>
-
 <section id="contact">
   <div class="container">
     <div class="reveal">
-      <div class="section-num" style="text-align:center; margin-bottom:1rem;">05 /</div>
+      <div class="section-num" style="text-align:center; margin-bottom:1rem;">04 /</div>
       <h2 class="section-title" style="text-align:center; font-family: var(--sans); font-size: clamp(1.8rem, 4vw, 3rem);">Let's Connect</h2>
       <p style="text-align:center; color: var(--text-dim); font-size:0.82rem; margin-top:0.5rem; margin-bottom:0.5rem;">
         Open to internships, collaborations, and systems-level discussions
