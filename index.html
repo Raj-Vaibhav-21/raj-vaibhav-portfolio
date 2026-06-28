@@ -413,6 +413,29 @@
       <div class="project-card reveal">
         <div class="project-header">
           <div class="project-meta">
+            <div class="project-type">Node.js · Async Systems · PostgreSQL</div>
+            <div class="project-name">Webhook Delivery Service</div>
+          </div>
+          <div class="project-date">May 2026</div>
+        </div>
+        <div class="project-body">
+          <div class="project-metric">⚡ async fan-out · at-least-once + DLQ</div>
+          <ul class="project-bullets">
+            <li>Built an asynchronous <strong>webhook delivery service</strong> in Node.js/Express that decouples ingestion from delivery — persisting incoming events and returning <strong>202 Accepted</strong> immediately while a background worker fans out deliveries out-of-band, so slow or failing subscribers never block ingestion.</li>
+            <li>Designed a <strong>PostgreSQL-backed job queue</strong> using <strong>SELECT ... FOR UPDATE SKIP LOCKED</strong> for contention-free concurrent workers, with <strong>at-least-once delivery</strong>, exponential backoff + jitter, idempotency keys, and a <strong>dead-letter state</strong> after N failed attempts.</li>
+            <li>Secured deliveries with <strong>HMAC-SHA256</strong> per-subscription payload signing and <strong>API-key auth</strong> on management endpoints.</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">JavaScript</span><span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Express</span><span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">REST</span><span class="stack-tag">HMAC-SHA256</span>
+          </div>
+          <a href="https://github.com/Raj-Vaibhav-21/webhook-delivery-service" target="_blank" rel="noopener noreferrer" class="project-github">View source on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-meta">
             <div class="project-type">JavaScript · Chrome Extension · DOM</div>
             <div class="project-name">Pac-Man Delete</div>
           </div>
